@@ -10,8 +10,8 @@
 
 .tile {
   border: 1px solid green;
-  width: 20px;
-  height: 20px;
+  width: 70px;
+  height: 70px;
   cursor: pointer;
   display: flex;
   justify-content: center;
