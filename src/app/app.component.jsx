@@ -14,7 +14,7 @@ const App = () => {
         style={{ width: "100%", maxWidth: "200px" }}
         onClick={() => setDevMode((prev) => !prev)}
       >
-        Dev Mode {devMode ? "ON" : ""}
+        Dev Mode: {devMode ? "ON" : "OFF"}
       </Button>
       <div>Game Time: {gameTime}</div>
       <Board resetTime={resetTime} setTimerRunning={setTimerRunning} devMode={devMode} />

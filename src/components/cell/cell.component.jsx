@@ -16,6 +16,8 @@ const Cell = (props) => {
     devMode,
     handleNewGameFirstClickMine,
     flagCount,
+    mineEmoji,
+    flagEmoji,
   } = props;
 
   /*
@@ -23,8 +25,6 @@ const Cell = (props) => {
       or, render bombs on first click:
       should be good now, but it's not the dry-est
     */
-  const mineEmoji = useMemo(() => "💩", []);
-  const flagEmoji = useMemo(() => "🙅‍♂️", []);
   const { renders } = useCountRenders(0);
 
   useEffect(() => {

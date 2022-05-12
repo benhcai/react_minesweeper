@@ -44,10 +44,3 @@ body {
   flex-direction: row;
   gap: var(--grid-gap);
 }
-
-/* input {
-  border: 1px solid rgba(255, 255, 255, 0.438);
-  color: var(--color-text);
-  border-radius: 8px;
-  padding: 8px;
-} */

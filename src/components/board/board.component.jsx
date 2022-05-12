@@ -1,5 +1,5 @@
 import "./board.style.css";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useMemo } from "react";
 import Cell from "../cell/cell.component";
 import Button from "../button/button.component";
 import Input from "../input/input.component";
@@ -64,6 +64,10 @@ const Board = ({ resetTime, setTimerRunning, devMode }) => {
     setBoard(newGame);
   };
 
+  const mineEmoji = useMemo(() => "💩", []);
+  const flagEmoji = useMemo(() => "🙅‍♂️", []);
+  const happyEmoji = useMemo(() => "😁", []);
+
   const handleNewGameFirstClickMine = () => {
     let newBoard = createGameWithInputs();
     const copyFlags = () =>
@@ -115,6 +119,8 @@ const Board = ({ resetTime, setTimerRunning, devMode }) => {
                     devMode={devMode}
                     handleNewGameFirstClickMine={handleNewGameFirstClickMine}
                     flagCount={flagCount}
+                    mineEmoji={mineEmoji}
+                    flagEmoji={flagEmoji}
                   />
                 );
               })}
@@ -187,8 +193,12 @@ const Board = ({ resetTime, setTimerRunning, devMode }) => {
   return (
     <div className="board" style={{ display: "flex", flexDirection: "column", gap: boardGap }}>
       <div>{devMode ? `Board renders: ${renders.current}` : ""}</div>
-      <div>Opened Cells: {clickedCells.current}</div>
-      <div>Number of Mines: {flagCount.current}</div>
+      <div>
+        Opened Cells {happyEmoji} : {clickedCells.current}
+      </div>
+      <div>
+        Number of Mines {mineEmoji} : {flagCount.current}
+      </div>
       {handleTitleRender()}
       {handleGridRender()}
       <div
