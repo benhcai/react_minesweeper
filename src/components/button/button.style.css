@@ -1,0 +1,8 @@
+.button {
+  color: var(--color-text);
+}
+
+.button:active {
+  background-color: green;
+  color: red;
+}

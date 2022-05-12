@@ -41,3 +41,5 @@
 #### Considerations
 
 - Should logic be executed on each click or can it all be done at the start of game?
+- Combining getSurroundingCells and countSurroundingMines will reduce the number of operations but increase complexity of the encompasing function
+- Using newBoard = [...board] will only produce a shallow copy of the old board. Modifying the newBoard's cells will also modify the old board's cells.
