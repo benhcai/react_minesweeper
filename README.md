@@ -6,10 +6,10 @@ Demo: https://minesweeper-benjamin-cai.netlify.app/
 
 ### Installation instructions
 
-Download and extract zip file for this repository from Github
-In your shell application, change directory to the extracted folder
-Run "npm install" to set up the application
-Run "npm start" to start the application
+1. Download and extract zip file for this repository from Github
+2. In your shell application, change directory to the extracted folder
+3. Run "npm install" to set up the application
+4. Run "npm start" to start the application
 
 ## Other
 
