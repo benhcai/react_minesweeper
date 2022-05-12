@@ -1,6 +1,7 @@
 # Minesweeper
 
 Author: Benjamin Cai
+
 Demo: https://minesweeper-benjamin-cai.netlify.app/
 
 ### Installation instructions
