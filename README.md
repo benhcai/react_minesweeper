@@ -11,6 +11,8 @@ In your shell application, change directory to the extracted folder
 Run "npm install" to set up the application
 Run "npm start" to start the application
 
+## Other
+
 #### Todos
 
 - [x] Create board component
