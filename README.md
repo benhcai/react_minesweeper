@@ -1,32 +1,14 @@
 # Minesweeper
 
-## Components
+Author: Benjamin Cai
+Demo: https://minesweeper-benjamin-cai.netlify.app/
 
-## Board
+### Installation instructions
 
-1. Create function that creates a 2D array.
-
-2. Properties as state for each tile:
-   {
-   isMine: boolean,
-   isFlagged: boolean,
-   isClicked: boolean,
-   position: {
-   x: int,
-   y: int
-   },
-   numberOfNeighbourMines: int
-   }
-
-### Tile
-
-### Helper functions
-
-#### generateMines
-
-1. Create "select random tile" function
-2. Check if randomTile has mine, if no, make it a mine, if yes, continue
-3. If currentMines = totalMines, exit.
+Download and extract zip file for this repository from Github
+In your shell application, change directory to the extracted folder
+Run "npm install" to set up the application
+Run "npm start" to start the application
 
 #### Todos
 
@@ -37,6 +19,7 @@
 - [x] Make method for generating random mines
 - [x] Make method for counting neighbouring mines
 - [x] Make method for revealing neighbour mines
+- [x] Add dev mode for ease in debugging
 
 #### Considerations
 
