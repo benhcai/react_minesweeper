@@ -1,5 +1,6 @@
 .button {
   color: var(--color-text);
+  user-select: none;
 }
 
 .button:active {
