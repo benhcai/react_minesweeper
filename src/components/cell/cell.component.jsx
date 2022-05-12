@@ -1,5 +1,5 @@
 import "./cell.style.css";
-import React, { useMemo, useEffect } from "react";
+import React, { useEffect } from "react";
 import Copier from "../helpers/Copier";
 import useCountRenders from "../../customHooks/useCountRender";
 import { countSurroundingAttribute } from "../helpers/gameHelpers";
@@ -20,11 +20,6 @@ const Cell = (props) => {
     flagEmoji,
   } = props;
 
-  /*
-      Make first click reset isolated test, remake new game
-      or, render bombs on first click:
-      should be good now, but it's not the dry-est
-    */
   const { renders } = useCountRenders(0);
 
   useEffect(() => {
@@ -35,12 +30,6 @@ const Cell = (props) => {
 
   const handleClickMine = (cell) => {
     if (clickedCells.current === 0 && board[cell.id.x][cell.id.y].isMine) {
-      /* 
-          Have to pass in current board with flag positions to allow re-render and keep flags
-          This means clicking flag before first left click will re-render the whole board
-          Alternatively, we could disable right click until left click occurs
-        */
-
       const newBoard = handleNewGameFirstClickMine();
       setBoard(newBoard);
       handleClick(newBoard[cell.id.x][cell.id.y]);
@@ -80,10 +69,6 @@ const Cell = (props) => {
   };
 
   const handleDoubleClick = (cell) => {
-    /*
-        Pass in whole board to keep track of flag positions
-        so they can be passed into the newBoard
-      */
     const flags = countSurroundingAttribute(board, cell, false, "isFlag");
     if (flags !== cell.surroundingMines) return;
     if (cell.isFlag) return;

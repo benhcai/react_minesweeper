@@ -25,14 +25,14 @@ const selectRandomInRange = (min, max) => {
   return randomNum;
 };
 
-export const selectRandom2DCell = (board) => {
+const selectRandom2DCell = (board) => {
   const { rows, columns } = getBoardData(board);
   const randomRow = selectRandomInRange(0, rows);
   const randomColumn = selectRandomInRange(0, columns);
   return board[randomRow][randomColumn];
 };
 
-export const makeBoardWithMines = (board, totalMines) => {
+const makeBoardWithMines = (board, totalMines) => {
   let newBoard = Copier.deep(board);
   let currentMines = 0;
   while (currentMines < totalMines) {

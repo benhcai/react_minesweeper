@@ -34,9 +34,9 @@
 - [x] Move tile state to within tile
 - [x] Move board state back to board component
 - [x] Move tile logic to separate tile component
-- [ ] Make method for generating random mines
-- [ ] Make method for counting neighbouring mines
-- [ ] Make method for revealing neighbour mines
+- [x] Make method for generating random mines
+- [x] Make method for counting neighbouring mines
+- [x] Make method for revealing neighbour mines
 
 #### Considerations
 

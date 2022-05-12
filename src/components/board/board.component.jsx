@@ -25,7 +25,6 @@ const Board = ({ resetTime, setTimerRunning, devMode }) => {
     });
   };
 
-  // Callback function vs passing in function?
   const [board, setBoard] = useState(createGameWithInputs());
   const [hiddenCells, setHiddenCells] = useState(true);
   const [gameWin, setGameWin] = useState(false);
@@ -91,7 +90,12 @@ const Board = ({ resetTime, setTimerRunning, devMode }) => {
       fontStyle = { color: "#1DFC85" };
       titleText = "You Win!";
     }
-    return <div style={{ margin: "auto", fontSize: "18px", ...fontStyle }}>{titleText}</div>;
+    return (
+      <div style={{ margin: "auto", fontSize: "20px", ...fontStyle }}>
+        {titleText}
+        <div style={{ margin: "auto", fontSize: "12px", paddingTop: "4px" }}>by Benjamin Cai</div>
+      </div>
+    );
   };
 
   const handleGridRender = () => {
