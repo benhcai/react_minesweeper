@@ -108,28 +108,6 @@ const Cell = (props) => {
       );
     }
 
-    // View for normal players
-    if (!devMode) {
-      if (cell.isFlag && !cell.isClicked)
-        return (
-          <div
-            className={"animate"}
-            style={{
-              opacity: 1,
-              fontSize: "15px",
-              paddingRight: "6px",
-              paddingBottom: "3px",
-            }}
-          >
-            {cell.isFlag ? flagEmoji : ""}
-          </div>
-        );
-      if (cell.isClicked === false && !cell.isFlag)
-        return <div className={"animate"} style={{ opacity: 0, fontSize: "0px" }}></div>;
-      if (cell.isMine) return mineEmoji;
-      return <div>{cell.surroundingMines ? cell.surroundingMines : ""}</div>;
-    }
-
     // If dev mode is ON
     if (devMode) {
       const devFontSize = "10px";
@@ -142,6 +120,26 @@ const Cell = (props) => {
         </div>
       );
     }
+
+    // View for normal players
+    if (cell.isFlag && !cell.isClicked)
+      return (
+        <div
+          className={"animate"}
+          style={{
+            opacity: 1,
+            fontSize: "15px",
+            paddingRight: "6px",
+            paddingBottom: "3px",
+          }}
+        >
+          {cell.isFlag ? flagEmoji : ""}
+        </div>
+      );
+    if (cell.isClicked === false && !cell.isFlag)
+      return <div className={"animate"} style={{ opacity: 0, fontSize: "0px" }}></div>;
+    if (cell.isMine) return mineEmoji;
+    return <div>{cell.surroundingMines ? cell.surroundingMines : ""}</div>;
   };
 
   return (
