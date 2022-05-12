@@ -32,7 +32,7 @@ const selectRandom2DCell = (board) => {
   return board[randomRow][randomColumn];
 };
 
-const makeBoardWithMines = (board, totalMines) => {
+const createBoardWithMines = (board, totalMines) => {
   let newBoard = Copier.deep(board);
   let currentMines = 0;
   while (currentMines < totalMines) {
@@ -87,7 +87,7 @@ export const countSurroundingAttribute = (board, cell, includeCell, attribute) =
   return attributeCount;
 };
 
-const makeBoardWithSurroundingMineCount = (board) => {
+const createBoardWithSurroundingMineCount = (board) => {
   const newBoard = Copier.deep(board);
   for (const row of newBoard) {
     for (const cell of row) {
@@ -100,7 +100,7 @@ const makeBoardWithSurroundingMineCount = (board) => {
 
 export const createGame = ({ rows, columns, mines, defaultOptions }) => {
   const initialBoard = createBoard(rows, columns, defaultOptions);
-  const boardWithMines = makeBoardWithMines(initialBoard, mines);
-  const boardWithMinesAndSurrounding = makeBoardWithSurroundingMineCount(boardWithMines);
+  const boardWithMines = createBoardWithMines(initialBoard, mines);
+  const boardWithMinesAndSurrounding = createBoardWithSurroundingMineCount(boardWithMines);
   return boardWithMinesAndSurrounding;
 };
